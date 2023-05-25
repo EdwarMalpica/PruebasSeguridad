@@ -1,0 +1,82 @@
+<div class="container h-100 mt-4">
+  <br><br><br><br>
+  <div class="row my-4">
+    <div class="col-1 mx-auto">
+      <h1 class="text-light">Login</h1>
+    </div>
+  </div>
+  <div class="row m-5">
+    <div class="col-5 mx-auto">
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+      <!-- Email input -->
+      <div class="form-outline mb-4">
+        <input type="email" id="email" formControlName="email" class="form-control" />
+        <label class="form-label text-light" for="email">Email</label>
+        <div class="text-danger" *ngIf="formulario.get('email').invalid && formulario.get('email').touched">
+           El email es requerido.
+        </div>
+      </div>
+
+      <!-- Password input -->
+      <div class="form-outline mb-4">
+        <input type="password" id="password" formControlName="password" class="form-control" />
+        <label class="form-label text-light" for="password">Contraseña</label>
+        <div class="text-danger" *ngIf="formulario.get('password').invalid && formulario.get('password').touched">
+           la contraseña es requerida.
+        </div>
+      </div>
+
+      <!-- 2 column grid layout for inline styling -->
+      <div class="row mb-4">
+        <div class="col d-flex justify-content-center">
+          <!-- Checkbox -->
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="form2Example31"
+              checked
+            />
+            <label class="form-check-label text-light" for="form2Example31">
+              No cerrar session
+            </label>
+          </div>
+        </div>
+
+        <div class="col">
+          <!-- Simple link -->
+          <a href="#!">¿Olvidaste tu contraseña?</a>
+        </div>
+      </div>
+
+      <!-- Submit button -->
+      <button type="submit"  class="btn btn-primary btn-block mb-4 w-100 text-light">
+        Ingresar
+      </button>
+
+      <!-- Register buttons -->
+      <div class="text-center text-light">
+        <p>No estas registrado <a href="#!">Registrar</a></p>
+        <p>O ingresa con:</p>
+        <button type="button" class="btn btn-link btn-floating mx-1">
+          <i class="bi bi-facebook"></i>
+        </button>
+
+        <button type="button" class="btn btn-link btn-floating mx-1">
+          <i class="bi bi-google"></i>
+        </button>
+
+        <button type="button" class="btn btn-link btn-floating mx-1">
+          <i class="bi bi-twitter"></i>
+        </button>
+
+        <button type="button" class="btn btn-link btn-floating mx-1">
+          <i class="bi bi-github"></i>
+        </button>
+      </div>
+    </form>
+    </div>
+
+  </div>
+</div>
